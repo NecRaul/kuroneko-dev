@@ -1,0 +1,80 @@
+body {
+  background-color: rgb(15, 11, 11);
+  color: rgb(232, 232, 232);
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+
+a {
+  color: rgb(210, 210, 210);
+}
+
+h1 {
+  color: rgb(96, 62, 66);
+}
+
+h2,
+h3 {
+  color: rgb(160, 98, 105);
+}
+
+p {
+  line-height: 1.5;
+}
+
+span {
+  color: rgb(15, 11, 11);
+}
+
+span:hover {
+  color: rgb(232, 232, 232);
+}
+
+img {
+  width: 30%;
+  height: auto;
+}
+
+.header,
+.navigation,
+.postheader,
+.footer {
+  text-align: center;
+}
+
+.postimage {
+  width: 50%;
+  margin-inline: 25%;
+}
+
+.postimagebig {
+  width: 100%;
+}
+
+.postitem {
+  color: rgb(193, 165, 168);
+  text-align: left;
+  margin: 10px 50px;
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.navigation {
+  padding-bottom: 10px;
+}
+
+.postheader {
+  margin-top: 10px;
+}
+.footer {
+  padding-top: 10px;
+}
+
+.navitem {
+  padding: 0px 30px;
+}
+
