@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <title>Title</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>NecRaul's website</h1>
+      <h2>Alternate title</h2>
+    </div>
+
+    <div class="navigation">
+      <a class="navitem" href="../kuroneko.html">Kuroneko</a>
+      <a class="navitem" href="../about.html">About Me</a>
+      <a class="navitem" href="../">Home</a>
+      <a class="navitem" href="../posts.html">Ramblings</a>
+      <a class="navitem" href="../3x3.html">3x3 stuff</a>
+    </div>
+
+    <hr />
+
+    <div class="postheader">
+      <h2>Title</h2>
+      <em id="date">MMMM d, yyyy</em>
+    </div>
+
+    <br />
+
+    <img class="postimage" src="../images/posts/image.extension" />
+
+    <h3>Header</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+
+    <h3>Another Header</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+
+    <br />
+
+    <hr />
+
+    <div class="footer">
+      <a class="navitem" href="https://github.com/NecRaul">Github</a>
+      <a class="navitem" href="https://github.com/NecRaul/necraul.github.io"
+        >Source</a
+      >
+    </div>
+  </body>
+</html>
