@@ -13,7 +13,7 @@ function loadPosts() {
         .map((match) => match.replace(/[><]/g, ""));
       return Promise.all(
         fileNames.map((fileName) => {
-          return fetch(`posts/${fileName}`)
+          return fetch(`/posts/${fileName}`)
             .then((response) => response.text())
             .then((postContent) => {
               const doc = new DOMParser().parseFromString(
@@ -24,7 +24,7 @@ function loadPosts() {
               const date = doc.getElementById("date").textContent;
               const listItem = document.createElement("li");
               listItem.className = "postitem";
-              listItem.innerHTML = `<a href="posts/${fileName}">${title}</a> - <em>${date}</em>`;
+              listItem.innerHTML = `<a href="/posts/${fileName}">${title}</a> - <em>${date}</em>`;
               postPairs.push([new Date(date), listItem]);
             })
             .catch((error) =>
