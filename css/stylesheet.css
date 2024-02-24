@@ -7,10 +7,6 @@ body {
   max-width: 1024px;
 }
 
-a {
-  color: rgb(210, 210, 210);
-}
-
 h1 {
   color: rgb(96, 62, 66);
 }
@@ -24,6 +20,10 @@ p {
   line-height: 1.5;
 }
 
+a {
+  color: rgb(210, 210, 210);
+}
+
 span {
   background-color: rgb(96, 62, 66);
   color: rgb(96, 62, 66);
@@ -32,6 +32,18 @@ span {
 span:hover {
   background-color: rgb(15, 11, 11);
   color: rgb(232, 232, 232);
+}
+
+pre {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(96, 62, 66);
+}
+
+code {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 500;
 }
 
 img {
