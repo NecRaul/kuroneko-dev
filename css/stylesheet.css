@@ -2,8 +2,7 @@ body {
   background-color: rgb(15, 11, 11);
   color: rgb(232, 232, 232);
   font-size: 18px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   max-width: 1024px;
 }
 
@@ -14,10 +13,13 @@ h1 {
 h2,
 h3 {
   color: rgb(160, 98, 105);
+  padding-inline: 30px;
 }
 
 p {
   line-height: 1.5;
+  text-align: justify;
+  padding-inline: 30px;
 }
 
 a {
@@ -36,6 +38,7 @@ span:hover {
 
 pre {
   margin-top: 10px;
+  margin-inline: 30px;
   padding: 10px;
   background-color: rgb(96, 62, 66);
 }
@@ -89,6 +92,6 @@ img {
 }
 
 .navitem {
-  padding: 0px 30px;
+  padding-inline: 30px;
 }
 
