@@ -9,8 +9,8 @@ function loadPosts() {
     .then((response) => response.text())
     .then((data) => {
       const fileNames = data
-        .match(/>([^<]+\.html)</g)
-        .map((match) => match.replace(/[><]/g, ""));
+        .match(/href="([^"]+\.html)"/g)
+        .map(match => match.replace(/href="|"/g, ''));
       return Promise.all(
         fileNames.map((fileName) => {
           return fetch(`/posts/${fileName}`)
@@ -44,4 +44,3 @@ function loadPosts() {
     })
     .catch((error) => console.error(`Error fetching posts folder: ${error}`));
 }
-
