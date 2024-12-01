@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            git -C /var/www/kuroneko-dev stash --include-untracked
             git -C /var/www/kuroneko-dev pull --force
-
