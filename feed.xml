@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NecRaul's website</title>
+    <link>https://www.kuroneko.dev/</link>
+    <description>Documenting the voices in my head</description>
+    <language>en-us</language>
+    <atom:link href="https://www.kuroneko.dev/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Accord's Library or: How I Learned to Stop Worrying and Hate SQEX</title>
+      <link>https://www.kuroneko.dev/posts/Accords_Library_or_How_I_Learned_to_Stop_Worrying_and_Hate_SQEX.html</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
+      <description>I think Square Enix SUCKS</description>
+    </item>
+
+    <item>
+      <title>I just want to be left alone</title>
+      <link>https://www.kuroneko.dev/posts/I_just_want_to_be_left_alone.html</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Uncle Ted, my beloved</description>
+    </item>
+
+    <item>
+      <title>Kyoto Animation and atrophy</title>
+      <link>https://www.kuroneko.dev/posts/Kyoto_Animation_and_atrophy.html</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 GMT</pubDate>
+      <description>KyoAni has fallen. Billions must rewatch Haruhi.</description>
+    </item>
+
+    <item>
+      <title>Note-takingfags are obnoxious</title>
+      <link>https://www.kuroneko.dev/posts/Note-takingfags_are_obnoxious.html</link>
+      <pubDate>Mon, 26 Feb 2024 00:00:00 GMT</pubDate>
+      <description>Obsidian as a second brain? You don't even have a brain!</description>
+    </item>
+
+    <item>
+      <title>The Sekimeiya: Spun Glass Review</title>
+      <link>https://www.kuroneko.dev/posts/The_Sekimeiya_Spun_Glass_Review.html</link>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
+      <description>No H scenes included</description>
+    </item>
+
+    <item>
+      <title>Haruhi Suzumiya and where it's all headed</title>
+      <link>https://www.kuroneko.dev/posts/Haruhi_Suzumiya_and_where_its_all_headed.html</link>
+      <pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate>
+      <description>Our Lord and Savior</description>
+    </item>
+
+    <item>
+      <title>Tachiyomi and The Importance of Gatekeeping</title>
+      <link>https://www.kuroneko.dev/posts/Tachiyomi_and_The_Importance_of_Gatekeeping.html</link>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 GMT</pubDate>
+      <description>Another one bites the dust</description>
+    </item>
+  </channel>
+</rss>
