@@ -8,6 +8,13 @@
     <atom:link href="https://www.kuroneko.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
+      <title>My struggle with everything that is happening</title>
+      <link>https://www.kuroneko.dev/posts/My_struggle_with_everything_that_is_happening.html</link>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 GMT</pubDate>
+      <description>I'm gonna have to leave the planet</description>
+    </item>
+
+    <item>
       <title>Accord's Library or: How I Learned to Stop Worrying and Hate SQEX</title>
       <link>https://www.kuroneko.dev/posts/Accords_Library_or_How_I_Learned_to_Stop_Worrying_and_Hate_SQEX.html</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
