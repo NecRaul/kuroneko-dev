@@ -66,8 +66,14 @@ img {
   margin-inline: 25%;
 }
 
-.postimagebig {
-  width: 100%;
+.duoimagecontainer {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+}
+
+.duoimage {
+  width: 39%;
 }
 
 .postitem {
@@ -94,4 +100,3 @@ img {
 .navitem {
   padding-inline: 30px;
 }
-
