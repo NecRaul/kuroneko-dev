@@ -22,5 +22,18 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            git -C /var/www/kuroneko-dev stash --include-untracked
-            git -C /var/www/kuroneko-dev pull --force
+            web_root="/var/www/kuroneko-dev"
+
+            echo "[1/4] Stashing local changes..."
+            git -C "$web_root" stash --include-untracked
+
+            echo "[2/4] Pulling latest changes..."
+            git -C "$web_root" pull --force
+
+            echo "[3/4] Getting commit hash..."
+            commit_hash=$(git -C "$web_root" rev-parse --short HEAD)
+
+            echo "[4/4] Applying cache busting..."
+            find -L "$web_root" -type f -name '*.html' -exec perl -pi -e 's{(\.(js|css))}{$1?hash='"$commit_hash"'}gi' {} +
+
+            echo "Deployment complete with hash: $commit_hash"
