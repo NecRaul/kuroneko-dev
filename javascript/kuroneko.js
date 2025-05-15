@@ -20,4 +20,3 @@ function randomKuroneko() {
   xmlHttp.open("GET", search_url, true);
   xmlHttp.send(null);
 }
-

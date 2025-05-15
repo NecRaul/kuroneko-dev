@@ -16,4 +16,3 @@ var countdownInterval = setInterval(function () {
     updateRedirectTimer(secondsRemaining);
   }
 }, 1000);
-

@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function loadPosts() {
   let postPairs = new Array();
   const postList = document.getElementById("postList");
-  fetch("/posts/")
+  fetch("/post/")
     .then((response) => response.text())
     .then((data) => {
       const fileNames = data
-        .match(/href="([^"]+\.html)"/g)
-        .map((match) => match.replace(/href="|"/g, ""));
+        .match(/href="([^"]+)"/g)
+        .map((match) => match.replace(/href="|"/g, ""))
+        .filter((href) => href !== "/" && href !== "/post" && href !== "../");
       return Promise.all(
         fileNames.map((fileName) => {
           let postUrl = "";
@@ -18,9 +19,9 @@ function loadPosts() {
             window.location.hostname === "localhost" ||
             window.location.hostname === "127.0.0.1"
           ) {
-            postUrl = `${fileName}`;
+            postUrl = `${fileName}/`;
           } else {
-            postUrl = `/posts/${fileName}`;
+            postUrl = `/post/${fileName}`;
           }
           return fetch(postUrl)
             .then((response) => response.text())
