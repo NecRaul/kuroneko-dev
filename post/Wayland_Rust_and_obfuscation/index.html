@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>Wayland, Rust and obfuscation</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>NecRaul's website</h1>
+      <h2>I love big corpos</h2>
+    </div>
+
+    <div class="navigation">
+      <a class="navitem" href="/kuroneko/">Kuroneko</a>
+      <a class="navitem" href="/about/">About Me</a>
+      <a class="navitem" href="/">Home</a>
+      <a class="navitem" href="/posts/">Ramblings</a>
+      <a class="navitem" href="/3x3/">3x3 stuff</a>
+    </div>
+
+    <hr />
+
+    <div class="postheader">
+      <h2>Wayland, Rust and obfuscation</h2>
+      <em id="date">June 13, 2025</em>
+    </div>
+
+    <br />
+
+    <img class="postimage" src="/images/posts/Agony.png" />
+
+    <h3>Linux</h3>
+    <p>
+      I first used Linux while working on projects for my bachelor's degree. I
+      could've probably used a VM or maybe WSL (I don't remember if it was
+      around back then) to not have to install Linux, but I had a spare 240 GB
+      SSD from an old laptop, so I bit the bullet, installed
+      <strong>Ubuntu</strong> on it, and tackled the coursework. However, using
+      Ubuntu wasn't too great of an experience. I didn't know this at the time,
+      but my issues weren't related to Linux itself; they had to do with the
+      package manager. <strong>Apt-get</strong> in and of itself is fine, but
+      whenever I had to download the latest version of something, it gave me
+      some headache. <strong>Snaps</strong> (fuck <strong>Canonical</strong>)
+      were annoying, and while I understood <strong>PPAs</strong>, I found them
+      unstable on a distro marketed as stable.
+    </p>
+    <p>
+      Around the time <strong>Windows 11</strong> was announced, I was already
+      moving away from daily gaming. I had quit Destiny 2, and most of my time
+      was being spent watching anime, working, or working on my Master's degree.
+      The games I was playing were mostly older games like S.T.A.L.K.E.R.,
+      Thief, Deus Ex, etc. on PC, and the rest of it was JRPGs and VNs on Vita.
+      I don't remember what it was that exactly made me want to switch off of
+      Windows, but it wasn’t just one issue - it was years of frustration
+      building up. I was already managing some <strong>Debian</strong> and
+      <strong>OpenBSD</strong> servers at my job, so I was more knowledgeable
+      about UNIX systems than a couple years ago. I bit the bullet, looked up
+      some tutorials, installed <strong>Arch Linux</strong> with
+      <em>XFCE</em> on a VM as a test run, backed up my data, and finally
+      installed <strong>Arch Linux</strong> with <em>KDE Plasma 5</em>. I didn't
+      have the easiest installation process - I wiped one of my hard drives even
+      (thank God I had backed it up) - but eventually, I had a working setup. It
+      allowed me to do everything I had done in Windows without giving me a
+      headache. Setting up a development environment was much easier (even
+      though, for Python, I still break the rules by using global packages
+      instead of using a virtual environment). All my emulators (haven't tried
+      Xbox/Xbox 360 emulation yet) worked great and all the games I wanted to
+      play either worked fine out of the box or did so with some tinkering. What
+      I'm trying to say is, it worked great for my use case. Arch being a
+      rolling release distro allowed me to use the new and shiny thing. It never
+      broke anything on my system either. Only complaint I had at the time
+      (which I still do) was how Linux does audio. I don't remember if I was
+      using Pulseaudio or Pipewire, but I switched from one to the other, and it
+      had all the same issues. Not being able to share my audio while screen
+      sharing in Discord was another issue I had, but that's also audio related.
+      At the time, this was an issue on both <strong>X11</strong> and
+      <strong>Wayland</strong>. As of now, I can share audio on Discord in X11
+      (in some applications - I still need to do more testing to confirm).
+    </p>
+    <p>
+      My honeymoon with Linux, more specifically KDE Plasma 5, ended when
+      <em>KDE Plasma 6</em> came out. It replaced KDE Plasma 5 on my machine,
+      and it was utterly broken. I think it also changed my default session from
+      X11 to Wayland, and that certainly didn't help either. Regardless, a lot
+      of things being broken or different soured my view on Plasma 6. I was
+      already toying with the idea of using a
+      <strong>window manager</strong> instead of a
+      <strong>desktop environment</strong> at the time, so I started looking
+      around and decided on <strong><em>dwm</em></strong
+      >. I installed it on a work laptop because I wasn't ready to go all-in
+      yet. I had some struggles, but eventually, I managed to smooth them over.
+      Soon after, I backed up my data again, did a fresh Arch install, and
+      started using dwm. It's been a little over a year and a half now, and I'm
+      still using dwm. I use <em>KDE Dolphin</em> for a GUI file manager because
+      it's pretty damn good, but otherwise, I can't think of any KDE apps I
+      have. Eventually, I wanted to try <strong>Fedora</strong> to familiarize
+      myself with the whole <strong>Red Hat</strong> environment, but
+      <em>GNOME</em> felt weird to me. I had some complaints similar to my
+      complaints regarding Ubuntu, and Fedora felt like
+      <em>beta-testing a future RHEL system</em> to me. So I formatted that
+      drive and installed Windows on it. Basically, I've been using Linux for
+      only two years, and I'm not an expert or an authority at it. With all that
+      being said, we can move onto Wayland, Rust, and what I think is happening
+      in the open source environment.
+    </p>
+
+    <img class="postimage" src="/images/posts/Xorg vs Wayland.jpg" />
+
+    <h3>Wayland</h3>
+    <p>
+      As I mentioned earlier, I've had very little experience with Wayland, but
+      what little experience I did have wasn't positive. Even before I saw the
+      general Wayland backlash on /g/ and elsewhere, I was running into issues
+      with software compatibility. Most of them were small things. I remember
+      having to change my mpv configs a lot to get them to work the way I
+      wanted. Another was screen sharing/recording in different applications
+      (Discord, Zoom, Microsoft Teams, OBS, ffmpeg, etc.). I couldn't figure out
+      image previews on lf and other terminal file managers. I had somehow
+      managed to make it work using stpv/ctpv and chafa, but it was very
+      pixelated and blurry. There were more issues I ran into, but I digress.
+      Eventually, I asked a friend (an oldfag from /g/) to help. He checked and
+      saw I was on Plasma 5 under Wayland - then told me to switch to X11. I
+      should be clear that this happened very early on, when I had first started
+      using Linux, so I probably only experienced a tiny percentage of the
+      issues others would experience. I don't know how good Wayland is now, and
+      because dwm is X11 only, I'm not planning on finding out how much Wayland
+      has improved. Maybe when I get a new laptop, I'll make an attempt to learn
+      a new distro like Nix or something. Then I'll put dwl or Hyprland on it
+      and see how much it has improved.
+    </p>
+    <p>
+      All that being said, since I'm not on Wayland and I don't develop or
+      maintain software in the Wayland, my point of reference is other people -
+      two in particular. One of them is
+      <a href="https://github.com/Dudemanguy">Dudemanguy</a>, the person I
+      shamelessly stole my website's design from and
+      <a href="https://github.com/probonopd">probonopd</a>, who makes Wayland
+      users seethe daily. According to
+      <a
+        href="https://dudemanguy.github.io/blog/posts/2022-06-10-wayland-xorg/wayland-xorg.html"
+        >this</a
+      >
+      and
+      <a
+        href="https://dudemanguy.github.io/blog/posts/2025-02-03-wayland-xorg-2/wayland-xorg-2.html"
+        >this</a
+      >
+      blogpost from Dudemanguy, Wayland has improved quite a lot over the last
+      couple of years. This is probably good for Wayland itself, the userspace,
+      and maybe the devs. I say maybe because I am not sure how good it is for
+      developers building stuff in Wayland, because I think there's a major
+      design flaw in Wayland, due to how small it is and how everyone seems to
+      be doing their own thing. None of that means much for me. I am a person
+      who doesn't really want my experience to change. I don't think Wayland is
+      <em>better</em> but <em>different</em>. I don't want to find something new
+      to learn, especially if it's not gonna make me money or meaningfully
+      change my experience for the better. Wayland was undercooked last time I
+      was forced to use it (KDE Plasma 6/GNOME), and I suspect it still is. The
+      <a
+        href="https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277"
+        >anti-Wayland Gist</a
+      >
+      from probonopd still shows a lot of features that are either missing or
+      incompatible with what I use daily.
+    </p>
+    <p>
+      The other thing I really dislike is how much it is being pushed. Red Hat
+      said they would drop support for X11 back in 2023, and they seem to be
+      doing exactly that. I had my concerns back when I read about it, and now
+      they seems to be getting realized. It's not just Red Hat dropping support,
+      but other major things in the corporate Linux environment (even more so in
+      enterprise settings). They also seem to not really care for BSD all that
+      much, which is sad because I liked maintaining the BSD servers at my
+      previous job more than any other - that is to say, BSD didn't really need
+      any maintenance. Call me a conspiracy theorist, but I don't think giving
+      control of Linux/BSD to major for-profit companies seems like a good idea.
+      <a href="https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish"
+        >Microsoft's EEE</a
+      >
+      model comes to mind. Nvidia might be a money-hungry company that won't
+      make their drivers open source, but they are a hardware company first and
+      foremost. I'm happy whenever they do something good and don't really care
+      when they jack up their prices or do something bad, since I am not their
+      customer. From what I understand, Wayland also performs significantly
+      worse with Nvidia (with both proprietary and open source drivers). While
+      you might call Nvidia bad, Red Hat and Canonical are spawn of Satan
+      compared to Nvidia in my opinion. It's not bad enough that Red Hat is
+      pushing Wayland this hard - they are actively sabotaging development of
+      X11. Thankfully, there seems to be light at the end of the tunnel with
+      <a href="https://github.com/X11Libre/xserver">XLibre</a> and I'm excited
+      to see where it leads.
+    </p>
+
+    <img class="postimage" src="/images/posts/Rust ugly.png" />
+
+    <h3>Rust</h3>
+    <p>
+      Similar to Wayland, I have no experience developing in
+      <strong>Rust</strong>. I can understand why some people like the language
+      but I don't understand why they would choose to develop in a language that
+      ugly. It has somewhat shaped newer versions of C++ to be just as ugly as
+      itself which I'm not too happy about. Unlike many people, I don't have a
+      problem with Rust itself (aside from it being ugly). I dislike the cult
+      surrounding Rust, but at the end of the day I value good software more
+      than I disdain the community. The problem with good software in this case
+      is, the small changes in behavior make dropping them as a replacement
+      either hard or straight up impossible. I am happy using
+      <strong>paru</strong>, which is written in Rust. I like
+      <strong>bat</strong>, <strong>eza</strong>, <strong>zoxide</strong>,
+      <strong>rg</strong>, and <strong>fd</strong>. The issue is, the small
+      differences in behavior, syntax, etc. are so annoying. fd is the biggest
+      offender - I rely on <em>find</em> so much that many of my scripts break
+      without it (or when I replace it with fd). Although I've heard people
+      complain about rg, my use case for grep tends to be for simple things
+      unlike find, so I can just replace it.
+    </p>
+    <p>
+      Another issue with these Rust rewrites of coreutils (and some other
+      applications) seems to be license-related. Now, I am not too big on any
+      license. I have used <em>GPL v2.0</em>, <em>GPL v3.0</em>,
+      <em>LGPL v2.1</em> (my favorite of the bunch, since the stuff I'm
+      currently most proud of are Python/Pip packages), <em>BSD 3-Clause</em>,
+      <em>MIT</em>, and even <em>Unlicense</em> on my personal projects.
+      However, these Rust devs take GPL v2.0 and v3.0 projects and rewrite them
+      with permissive licenses, and I believe that is bad for the open source
+      environment. I'm gonna refer back to my hate on Canonical, since now they
+      are rewriting sudo to Rust with a permissive license.
+    </p>
+
+    <h3>Closing notes</h3>
+    <p>
+      All in all, refering back to what I said early on, I’m not an X11/Wayland
+      developer - just an end user. My opinion should be treated accordingly. I
+      really hope XLibre turns out to be as good as it seems and improves and
+      maintains the existing software without breaking anything in my setup.
+      Regarding Rust, time will tell. Early last year,
+      <a
+        href="https://web.archive.org/web/20240226175250/https://www.whitehouse.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/"
+      >
+        the White House endorsed memory-safe languages
+      </a>
+      - Rust in particular - in
+      <a
+        href="https://web.archive.org/web/20240226175219/https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf"
+        >a now-deleted document</a
+      >. I believe that should raise concerns for everyone, not just Rust
+      developers and Rust haters but also end users. Just as I don’t want major
+      corporations meddling in open source development, I don’t want the
+      government doing the same either.
+    </p>
+
+    <br />
+
+    <hr />
+
+    <div class="footer">
+      <a class="navitem" href="https://github.com/NecRaul" target="_blank"
+        >Github</a
+      >
+      <a class="navitem" href="/feed.xml" target="_blank">RSS</a>
+      <a
+        class="navitem"
+        href="https://github.com/NecRaul/kuroneko-dev"
+        target="_blank"
+        >Source</a
+      >
+    </div>
+  </body>
+</html>
