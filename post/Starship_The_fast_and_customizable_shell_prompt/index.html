@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>Starship: The fast and customizable shell prompt</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>NecRaul's website</h1>
+      <h2>Rustroons won</h2>
+    </div>
+
+    <div class="navigation">
+      <a class="navitem" href="/kuroneko/">Kuroneko</a>
+      <a class="navitem" href="/about/">About Me</a>
+      <a class="navitem" href="/">Home</a>
+      <a class="navitem" href="/posts/">Ramblings</a>
+      <a class="navitem" href="/3x3/">3x3 stuff</a>
+    </div>
+
+    <hr />
+
+    <div class="postheader">
+      <h2>Starship: The fast and customizable shell prompt</h2>
+      <em id="date">June 19, 2025</em>
+    </div>
+
+    <br />
+
+    <img class="postimage" src="/images/posts/Starship.png" />
+
+    <h3>Bash is slow</h3>
+    <p>
+      After shitting on the Rust programming language in my previous post, I was
+      forced to use a Rust alternative for my shell prompt, since what I was
+      using in Bash is slow beyond belief. This isn’t due to
+      <em>my implementation</em>
+      being slow, but because Bash itself is slow. I should mention that
+      comparing Bash and Rust isn’t fair, as they’re meant to be used in
+      different contexts. This post isn’t going to be very informative or
+      explanatory; it’s more about documenting my experience using Starship and
+      what I did beforehand.
+    </p>
+
+    <h3>Starship</h3>
+    <p>
+      This isn’t the first time I’ve used
+      <a href="https://starship.rs" target="_blank"><strong>Starship</strong></a
+      >. After seeing a post on /g/ complaining about the slowness of a shell
+      prompt written in Bash, I briefly installed and tried Starship. However, I
+      spent very little time figuring it out. The extent of my trial was copying
+      my <strong>PS1</strong> and whatever it sources from
+      <strong>.bashrc</strong>, pasting it into an LLM, explaining what I
+      wanted, and receiving something that didn’t run. Since I didn’t read the
+      documentation on the Starship site, I couldn’t debug the errors and
+      eventually gave up, returning to my Bash-configured prompt with
+      significantly higher latency.
+    </p>
+    <p>
+      I don’t know what prompted me (heh) to give it another shot, but it
+      happened in the late hours of the night. I should’ve been asleep hours
+      ago, but I fixated on fixing the high latency issue and gave Starship a
+      fair try. For the next couple of hours, I read the documentation and tried
+      to figure out how strings work in TOML.
+    </p>
+    <p>
+      I think Starship overall has pretty good documentation, but the website
+      it’s on is very bad. Scrolling on that site sucks - no, I will not
+      elaborate. TOML is minimal, but I wouldn’t call it obvious. One of the
+      things I spent the most time on was the actual format string. I was using
+      backslashes to escape some special characters used in the format, but when
+      I did that, I couldn’t put the different modules on separate lines for
+      clarity. Eventually, I gave up on that approach and moved on to creating
+      custom modules that fulfilled this purpose.
+    </p>
+
+    <h3>Details</h3>
+    <p>
+      Right now, my prompt looks identical to what it looked like before, but I
+      have extra functionality - like showing which language the project is in,
+      more detailed Git state (more Git-related info in general), etc. This was
+      my PS1 before Starship:
+    </p>
+    <pre><code>PS1="[\u@\h \W]\$ \$(__git_branch)\$(__git_state)"</code></pre>
+    <p>
+      I omitted the colors from the command, but I was exporting certain colors
+      (like red, blue, yellow, purple, etc.) in bold using ANSI escape sequences
+      and then using them in PS1.
+    </p>
+    <p>
+      I had a Bash script in my Git config folder for showing Git-related
+      information - like branch and state info - which I sourced in .bashrc:
+    </p>
+    <pre><code>source "$XDG_CONFIG_HOME/git/git-prompt.sh"</code></pre>
+    <p>
+      If you were to ask me to explain what the Bash script does, I couldn’t
+      really explain it, as I wrote it quite a while ago and copied parts of it
+      from scripts I found on the internet.
+    </p>
+    <pre><code><a 
+      href="https://github.com/NecRaul/gitconfig/blob/main/git-prompt.sh"
+      target="_blank"
+      >https://github.com/NecRaul/gitconfig/blob/main/git-prompt.sh</a
+      ></code></pre>
+    <p>
+      Now, I have a pretty comprehensive <strong>starship.toml</strong> file,
+      which not only reduces latency significantly but is also easier to
+      customize.
+    </p>
+    <pre><code><a
+      href="https://github.com/NecRaul/dotfiles/blob/main/.config/starship.toml"
+      target="_blank"
+      >https://github.com/NecRaul/dotfiles/blob/main/.config/starship.toml</a
+      ></code></pre>
+
+    <h3>Closing notes</h3>
+    <p>
+      I recommend Starship to everyone. With a little configuration, you can
+      replace your PS1 - however simple it may be - with this utility and go
+      about your day.
+    </p>
+
+    <br />
+
+    <hr />
+
+    <div class="footer">
+      <a class="navitem" href="https://github.com/NecRaul" target="_blank"
+        >Github</a
+      >
+      <a class="navitem" href="/feed.xml" target="_blank">RSS</a>
+      <a
+        class="navitem"
+        href="https://github.com/NecRaul/kuroneko-dev"
+        target="_blank"
+        >Source</a
+      >
+    </div>
+  </body>
+</html>
