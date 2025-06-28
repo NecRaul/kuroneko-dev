@@ -26,16 +26,6 @@ a {
   color: rgb(210, 210, 210);
 }
 
-span {
-  background-color: rgb(96, 62, 66);
-  color: rgb(96, 62, 66);
-}
-
-span:hover {
-  background-color: rgb(15, 11, 11);
-  color: rgb(232, 232, 232);
-}
-
 pre {
   margin-top: 10px;
   margin-inline: 30px;
@@ -103,4 +93,14 @@ img {
 
 .link-highlight {
   color: rgb(193, 165, 168);
+}
+
+.spoiler {
+  background-color: rgb(96, 62, 66);
+  color: rgb(96, 62, 66);
+}
+
+.spoiler:hover {
+  background-color: rgb(15, 11, 11);
+  color: rgb(232, 232, 232);
 }
