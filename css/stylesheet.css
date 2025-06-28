@@ -103,6 +103,22 @@ img {
   padding: 2px 4px;
 }
 
+.quote {
+  color: rgb(187, 187, 187);
+  border-left: 4px solid rgb(102, 102, 102);
+  font-style: italic;
+  text-align: justify;
+  margin: 10px 30px;
+  padding-left: 16px;
+}
+
+.quote blockquote.quote {
+  color: rgb(204, 204, 204);
+  border-left: 4px solid rgb(136, 136, 136);
+  margin: 10px 0px 10px 16px;
+  padding-left: 12px;
+}
+
 .spoiler {
   background-color: rgb(96, 62, 66);
   color: rgb(96, 62, 66);
