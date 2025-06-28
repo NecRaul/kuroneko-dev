@@ -100,3 +100,7 @@ img {
 .navitem {
   padding-inline: 30px;
 }
+
+.link-highlight {
+  color: rgb(193, 165, 168);
+}
