@@ -49,35 +49,82 @@
       est laborum.
     </p>
 
+    <div class="duoimagecontainer">
+      <img class="duoimage" src="/images/posts/image.extension" />
+      <img class="duoimage" src="/images/posts/image.extension" />
+    </div>
+
     <h3>Another Header</h3>
     <p>
+      <span class="spoiler">Lorem ipsum dolor</span> sit amet, consectetur
+      adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+      <code class="inline-code">magna aliqua</code>. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum.
+      <a class="link-highlight" href="https://kuroneko.dev">Lorem ipsum</a>
+      dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum.
+    </p>
+    <ul>
+      <li class="postitem">Item 1</li>
+      <ul>
+        <li class="postitem">Item 1a</li>
+        <li class="postitem">Item 1b</li>
+      </ul>
+      <li class="postitem">Item 2</li>
+      <li class="postitem">Item 3</li>
+    </ul>
+
+    <blockquote class="quote">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
-    </p>
+      <blockquote class="quote">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </blockquote>
+    </blockquote>
 
-    <pre>
+    <video class="postimage" controls>
+      <source src="/videos/video.webm" type="video/webm" />
+    </video>
+
+    <pre class="block-code">
 <code>function Panel(element, canClose, closeHandler) {
   this.element = element;
   this.canClose = canClose;
   this.closeHandler = function () { if (closeHandler) closeHandler() };
 }</code></pre>
 
+    <pre
+      class="block-code"
+    ><code><a href="https://kuroneko.dev" target="_blank">https://kuroneko.dev</a></code></pre>
+
     <br />
 
     <hr />
 
     <div class="footer">
+      <a class="navitem" href="mailto:necraul@kuroneko.dev" target="_blank"
+        >Contact</a
+      >
       <a class="navitem" href="https://github.com/NecRaul" target="_blank"
         >Github</a
       >
@@ -89,5 +136,11 @@
         >Source</a
       >
     </div>
+
+    <audio autoplay>
+      <source src="/sounds/sound.mp3" />
+    </audio>
+
+    <br />
   </body>
 </html>
