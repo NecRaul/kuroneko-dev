@@ -26,13 +26,6 @@ a {
   color: rgb(210, 210, 210);
 }
 
-pre {
-  margin-top: 10px;
-  margin-inline: 30px;
-  padding: 10px;
-  background-color: rgb(96, 62, 66);
-}
-
 code {
   font-size: 12px;
   font-family: monospace;
@@ -49,6 +42,12 @@ img {
 .postheader,
 .footer {
   text-align: center;
+}
+
+.block-code,
+.inline-code {
+  background-color: rgb(96, 62, 66);
+  border-radius: 4px;
 }
 
 .postimage {
@@ -93,6 +92,15 @@ img {
 
 .link-highlight {
   color: rgb(193, 165, 168);
+}
+
+.block-code {
+  margin: 10px 30px;
+  padding: 10px;
+}
+
+.inline-code {
+  padding: 2px 4px;
 }
 
 .spoiler {
