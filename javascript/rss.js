@@ -24,7 +24,7 @@ function generateRSS(postsArray) {
       return `
     <item>
       <title>${post.title}</title>
-      <link>https://www.kuroneko.dev/posts/${post.post}</link>
+      <link>https://www.kuroneko.dev/post/${post.post}</link>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${post.description}</description>
     </item>`;
