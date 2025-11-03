@@ -30,7 +30,7 @@
 
     <br />
 
-    <img class="postimage" src="/images/posts/image.extension" />
+    <img class="postimage" src="/images/post/image.extension" />
 
     <h3>Header</h3>
     <p>
@@ -50,8 +50,8 @@
     </p>
 
     <div class="duoimagecontainer">
-      <img class="duoimage" src="/images/posts/image.extension" />
-      <img class="duoimage" src="/images/posts/image.extension" />
+      <img class="duoimage" src="/images/post/image.extension" />
+      <img class="duoimage" src="/images/post/image.extension" />
     </div>
 
     <h3>Another Header</h3>
