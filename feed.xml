@@ -8,6 +8,13 @@
     <atom:link href="https://www.kuroneko.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
+      <title>The worth of a monologue</title>
+      <link>https://www.kuroneko.dev/post/The_worth_of_a_monologue</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate>
+      <description>The break in the narrative</description>
+    </item>
+
+    <item>
       <title>Starship: The fast and customizable shell prompt</title>
       <link>https://www.kuroneko.dev/post/Starship_The_fast_and_customizable_shell_prompt</link>
       <pubDate>Thu, 19 Jun 2025 00:00:00 GMT</pubDate>
