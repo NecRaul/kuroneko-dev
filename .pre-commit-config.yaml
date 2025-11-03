@@ -1,0 +1,28 @@
+repos:
+  - repo: local
+    hooks:
+      - id: prettier-format
+        name: Prettier Format
+        entry: >
+          bash -e -c '
+          FILES=$(git diff --cached --name-only | grep -E "\.(js|css|html)$" || true);
+          if [ -n "$FILES" ]; then
+            prettier --config ~/.prettierrc --write $FILES;
+            git add $FILES;
+          fi
+          '
+        language: system
+        pass_filenames: false
+
+      - id: update-rss
+        name: Update RSS Feed
+        entry: >
+          bash -e -c '
+          NEW_POST=$(git diff --cached --name-only --diff-filter=A | grep -E "^post/[^/]+/index\.html$" || true);
+          if [ -n "$NEW_POST" ]; then
+            node javascript/rss.js;
+            git add feed.xml;
+          fi
+          '
+        language: system
+        pass_filenames: false
