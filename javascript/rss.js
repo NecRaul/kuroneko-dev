@@ -24,9 +24,10 @@ function generateRSS(postsArray) {
       return `
     <item>
       <title>${post.title}</title>
-      <link>https://www.kuroneko.dev/post/${post.post}</link>
+      <link>https://www.kuroneko.dev${post.post}</link>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${post.description}</description>
+      <enclosure url="https://www.kuroneko.dev${post.image}" type="image/jpeg"/>
     </item>`;
     })
     .join("\n");
@@ -62,6 +63,9 @@ fs.readdir(postsPath, (err, posts) => {
       const titleMatch = data.match(/<title>\s*([\s\S]*?)\s*<\/title>/i);
       const descriptionMatch = data.match(/<h2>(.*?)<\/h2>/i);
       const dateMatch = data.match(/id=["']date["'][^>]*>(.*?)<\/[^>]+>/i);
+      const imageMatch = data.match(
+        /<img[^>]+class=["']postimage[^"']*["'][^>]+src=(?:"([^"]+)"|'([^']+)')/i,
+      );
 
       const title = titleMatch ? titleMatch[1] : "No title found";
       const description = descriptionMatch
@@ -69,8 +73,15 @@ fs.readdir(postsPath, (err, posts) => {
         : "No description found";
       const rawDate = dateMatch ? dateMatch[1] : "No date found";
       const parsedDate = parseDate(rawDate) || "Invalid date";
+      const image = imageMatch ? imageMatch[1] || imageMatch[2] : null;
 
-      postsArray.push({ post, title, description, date: parsedDate });
+      postsArray.push({
+        post: "/post/" + post,
+        title,
+        description,
+        date: parsedDate,
+        image,
+      });
 
       if (postsArray.length === posts.length) {
         postsArray.sort((a, b) =>
