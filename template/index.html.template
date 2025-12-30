@@ -30,7 +30,10 @@
 
     <br />
 
-    <img class="postimage zoomimage" src="/images/post/image.extension" />
+    <img
+      class="postimage zoomimage"
+      src="/images/post/postname/image.extension"
+    />
 
     <h3>Header</h3>
     <p>
@@ -50,8 +53,14 @@
     </p>
 
     <div class="duoimagecontainer">
-      <img class="duoimage zoomimage" src="/images/post/image.extension" />
-      <img class="duoimage zoomimage" src="/images/post/image.extension" />
+      <img
+        class="duoimage zoomimage"
+        src="/images/post/postname/image.extension"
+      />
+      <img
+        class="duoimage zoomimage"
+        src="/images/post/postname/image.extension"
+      />
     </div>
 
     <h3>Another Header</h3>
@@ -105,7 +114,7 @@
     </blockquote>
 
     <video class="postimage" controls>
-      <source src="/videos/video.webm" type="video/webm" />
+      <source src="/videos/post/postname/video.webm" type="video/webm" />
     </video>
 
     <pre class="block-code">
@@ -145,7 +154,7 @@
     <script type="text/javascript" src="/javascript/modal.js"></script>
 
     <audio autoplay>
-      <source src="/sounds/sound.mp3" />
+      <source src="/sounds/post/postname/sound.mp3" />
     </audio>
 
     <br />
