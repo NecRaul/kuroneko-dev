@@ -52,6 +52,8 @@
       est laborum.
     </p>
 
+    <h3>Another Header</h3>
+
     <div class="duoimagecontainer">
       <img
         class="duoimage zoomimage"
@@ -63,7 +65,6 @@
       />
     </div>
 
-    <h3>Another Header</h3>
     <p>
       <span class="spoiler">Lorem ipsum dolor</span> sit amet, consectetur
       adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
