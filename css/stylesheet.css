@@ -128,3 +128,51 @@ img {
   background-color: rgb(15, 11, 11);
   color: rgb(232, 232, 232);
 }
+
+.zoomimage {
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+
+.zoomimage:hover {
+  opacity: 0.8;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 11, 11, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 35vw;
+  min-height: auto;
+  max-width: 75%;
+  max-height: 75vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: zoomIn 0.25s ease-out;
+  object-fit: contain;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+}
