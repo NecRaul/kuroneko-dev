@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>Intermission: movies, manga, and me</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>NecRaul's website</h1>
+      <h2>I have to get back to watching anime and playing vidya...</h2>
+    </div>
+
+    <div class="navigation">
+      <a class="navitem" href="/kuroneko/">Kuroneko</a>
+      <a class="navitem" href="/about/">About Me</a>
+      <a class="navitem" href="/">Home</a>
+      <a class="navitem" href="/posts/">Ramblings</a>
+      <a class="navitem" href="/3x3/">3x3 stuff</a>
+    </div>
+
+    <hr />
+
+    <div class="postheader">
+      <h2>Intermission: movies, manga, and me</h2>
+      <em id="date">January 6, 2026</em>
+    </div>
+
+    <br />
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Intermission.jpg"
+    />
+
+    <h3>Renovations and its consequences</h3>
+    <p>
+      Although in
+      <a
+        class="link-highlight"
+        href="/post/The_worth_of_a_monologue/"
+        target="_blank"
+        >my blogpost about monologues</a
+      >
+      I said I would be writing about
+      <a class="link-highlight" href="https://vndb.org/v22899" target="_blank"
+        >Nukitashi</a
+      >
+      followed by
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/70261/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu"
+        target="_blank"
+        >Mushoku Tensei</a
+      >, I had an abundance of free time on my hands in-between reading two VNs.
+      I already explained this was due to renovations, but I'd like to give more
+      context. Simply put, my room's renovations took way longer than expected.
+      I had already disassembled my PC, desk, and bed and moved them, along with
+      all other furniture out of my room, when the manual laborers who worked on
+      the rest of the house informed me they couldn't come by for a couple of
+      days. This couple of days turned into a little longer than a week, and
+      more problems ensued during the renovation process, which extended the
+      time where I couldn't access my PC to read
+      <a class="link-highlight" href="https://vndb.org/v23741" target="_blank"
+        >Nukitashi 2</a
+      >.
+    </p>
+    <p>
+      In this abundance of free time, having nothing else to do, I re-read
+      <a class="link-highlight" href="https://vndb.org/v945" target="_blank"
+        >Katawa Shoujo</a
+      >
+      on my <em>PS Vita</em>, finished reading
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/124209/Real_mo_Tama_ni_wa_Uso_wo_Tsuku"
+        target="_blank"
+        >Real mo Tama ni wa Uso o Tsuku</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/120974/25-jigen_no_Ririsa"
+        target="_blank"
+        >2.5-jigen no Yuuwaku</a
+      >, read
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/162479/Kagurabachi"
+        target="_blank"
+        >Kagurabachi</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/158707/Maria_no_Danzai"
+        target="_blank"
+        >Maria no Danzai</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/127084/Cuprum_no_Hanayome"
+        target="_blank"
+        >Cuprum no Hanayome</a
+      >, and watched a lot of movies after setting up a media stack.
+    </p>
+    <p>
+      Two things to mention: First, I won't be talking about
+      <em>Katawa Shoujo</em> here, as it deserves its own blogpost, although I
+      can't guarantee that it will get one. Second, most of these are my loosely
+      connected, lightly edited notes that I wrote down on what I thought about
+      these movies right after I had seen them. I put a bit more effort into the
+      ones I really liked or had been looking forward to watching. I also tried
+      to put more effort into the manga section, but admittedly, it's much
+      harder to write about a manga I've read over the course of a couple of
+      years than it is to jot down my thoughts about a movie I just watched.
+    </p>
+
+    <h3>Media Stack</h3>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Media Stack.png"
+    />
+
+    <p>
+      I had decided on not going into much detail regarding the media stack, but
+      I spent a considerable amount of time getting everything the way I wanted,
+      so now I feel compelled to write about it.
+    </p>
+    <p>
+      The initial setup, using some official <em>Arch Linux</em> packages and
+      some <em>AUR</em> packages of
+      <a class="link-highlight" href="https://jellyfin.org/" target="_blank"
+        >Jellyfin</a
+      >
+      and
+      <a class="link-highlight" href="https://wiki.servarr.com/" target="_blank"
+        >Arr applications</a
+      >, was pretty easy and worked pretty well. I could download movies from my
+      phone (or TV, but it would've been a pain to search for movies with a TV
+      remote) and watch them on the Android TV Jellyfin client (or on my phone,
+      but you get the idea). However, I didn't wanna dedicate a couple of
+      gigabytes on my root partition to just a media stack, so I migrated
+      everything over to <strong><em>Docker</em></strong
+      >.
+    </p>
+    <p>
+      I haven't worked with <em>Docker</em> or other container services that
+      much, since generally someone else set up everything at my job and I only
+      had to run it. I have worked with <em>YAML</em> for
+      <strong>CI/CD</strong> stuff before, so that part wasn't unfamiliar. The
+      only annoyance was the lack of good documentation for the different images
+      I was using.
+    </p>
+    <p>
+      I made a home directory for the <em>Docker</em> user and eventually set up
+      everything perfectly. I liked this workflow with containers so much I even
+      migrated my <strong>qBittorrent</strong> instance. I still prefer the QT
+      client over the web client, but the difference between them is minimal,
+      and I could use the web client effectively right away. The last thing I
+      added to my media stack was <em>Jellyseerr</em>, which I'll use to get
+      requests from my friends for any movies they might want to watch. Down the
+      line, I want to build a dedicated NAS with redundancy just for this type
+      of thing.
+    </p>
+    <p>
+      As for a dashboard, I was using
+      <a
+        class="link-highlight"
+        href="https://github.com/bastienwirtz/homer"
+        target="_blank"
+        >Homer</a
+      >
+      for a while, but eventually I found
+      <a
+        class="link-highlight"
+        href="https://github.com/glanceapp/glance"
+        target="_blank"
+        >Glance</a
+      >, which is a more featureful and nicer-looking alternative. I even
+      <a
+        class="link-highlight"
+        href="https://github.com/NecRaul/glance"
+        target="_blank"
+        >cloned the repo</a
+      >, made some PRs, and published
+      <a
+        class="link-highlight"
+        href="https://hub.docker.com/r/necraul/glance"
+        target="_blank"
+        >my own Docker image</a
+      >
+      with patches for personal use until they merge my PRs.
+    </p>
+
+    <h3>Kinography</h3>
+    <p>
+      Since I had so much time with no computer at my disposal, I watched
+      <em>a lot of movies</em> in a short period of time and thought about what
+      movies I really love. Along with this post, I've added a Kino section to
+      my <a class="link-highlight" href="/3x3/" target="_blank">3x3</a> page,
+      and soon enough, a music section should follow, where I put my favorite
+      albums.
+    </p>
+
+    <div class="duoimagecontainer">
+      <img
+        class="duoimage zoomimage"
+        src="/images/post/Intermission_movies_manga_and_me/Trainspotting.jpg"
+      />
+      <img
+        class="duoimage zoomimage"
+        src="/images/post/Intermission_movies_manga_and_me/Buffalo '66.jpg"
+      />
+    </div>
+
+    <p>
+      I'm not a movie lover. I'm not even a movie "liker". Most movies I don't
+      care for in general, but out of the new movies I watched,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/trainspotting/"
+        target="_blank"
+        >Trainspotting</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/buffalo-66/"
+        target="_blank"
+        >Buffalo '66</a
+      >
+      instantly became some of my favorite movies of all time. Both of these
+      movies have very different themes and styles, and I liked them for
+      different reasons. They each made me feel very different things. I was
+      laughing my ass off at <em>Trainspotting</em> and how it undermines
+      everything that happens in a junkie's life, contrary to movies like
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=DsCIXxR64mY"
+        target="_blank"
+        >Requiem for a Dream</a
+      >
+      where everything is taken so seriously that some of the over the top
+      scenes become comedic. I was enamored and fascinated by the tension and
+      the beauty portrayed in <em>Buffalo '66</em>. I don't really care about
+      the criticism people have for it or how it might be seen as harmful. It
+      was a movie that was worth every second, and God willing, I'll watch it
+      many more times in the future.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/bram-stokers-dracula/"
+        target="_blank"
+        >Bram Stoker's Dracula</a
+      >
+      was a decent, very well shot movie, but it was more of a style over
+      substance experience for me. I like
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/nosferatu/"
+        target="_blank"
+        >the original Nosferatu</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/dracula/"
+        target="_blank"
+        >the original Dracula</a
+      >
+      movies more than this. I would say this is better than
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/nosferatu-2024/"
+        target="_blank"
+        >Robert Eggers' Nosferatu</a
+      >
+      though.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/streets-of-fire/"
+        target="_blank"
+        >Streets of Fire</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-rocky-horror-picture-show/"
+        target="_blank"
+        >The Rocky Horror Picture Show</a
+      >
+      were entertaining to me since I like movies similar to them, like
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/phantom-of-the-paradise/"
+        target="_blank"
+        >Phantom of the Paradise</a
+      >
+      where music is the driving force, but I don't know if I would recommend
+      them to other people. The other reason I grouped them together is that
+      <a
+        class="link-highlight"
+        href="https://rateyourmusic.com/artist/jim-steinman"
+        target="_blank"
+        >Jim Steinman</a
+      >
+      wrote some of the music for one, and
+      <a
+        class="link-highlight"
+        href="https://rateyourmusic.com/artist/meat-loaf"
+        target="_blank"
+        >Meatloaf</a
+      >
+      appears and sings in the other.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/equilibrium/"
+        target="_blank"
+        >Equilibrium</a
+      >
+      had decent action set pieces, especially the very first and last ones,
+      were pretty great, but the movie itself failed to impress me in terms of
+      everything else. The story was laughable. The one thing aside from the
+      action scenes I liked was the idea that everything would be fixed in a day
+      with no drugs to suppress emotion and feelings due to human nature.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/porkys/"
+        target="_blank"
+        >Porky's</a
+      >
+      was pretty funny all the way through, and I think it might be a movie I go
+      back to with friends from time to time. Some scenes made me pause the
+      movie because my laughter was disrupting the experience of others who were
+      watching the movie with me.
+    </p>
+    <p>
+      I rewatched the
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/operation-y-and-other-shuriks-adventures/"
+        target="_blank"
+        >three classic</a
+      >
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/kidnapping-caucasian-style/"
+        target="_blank"
+        >Soviet slapstick</a
+      >
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ivan-vasilyevich-changes-his-profession/"
+        target="_blank"
+        >comedy movies</a
+      >
+      featuring <em>Shurik</em>, and they were just as entertaining as I
+      remembered. Since I have a crush on <em>Natalya Varley</em>, I decided to
+      watch
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/viy/"
+        target="_blank"
+        >Viy</a
+      >
+      for the first time as well and was pleasantly surprised by it.
+      <em>Viy</em> does a lot of things well, and just the last 10 to 15 minutes
+      is <strong>one of the best sequences in Soviet cinema</strong> I've seen.
+      Its ending is somewhat left to interpretation, and even ignoring that,
+      this is one of those movies where each person will have a somewhat
+      different interpretation of the explored themes. I myself might have a
+      different interpretation of them in subsequent watches. Overall, it's a
+      pretty good movie, definitely worth watching.
+    </p>
+    <p>
+      I rewatched
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-wizard-of-oz-1939/"
+        target="_blank"
+        >The Wizard of Oz</a
+      >
+      with my mom, and we both enjoyed it. Overall, a great movie with a
+      straightforward and positive message one can and should take to heart.
+    </p>
+    <p>
+      I rewatched the <em>first three Indiana Jones movies</em>, and though I
+      didn't really care for
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/indiana-jones-and-the-temple-of-doom/"
+        target="_blank"
+        >The Temple of Doom</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/indiana-jones-and-the-last-crusade/"
+        target="_blank"
+        >The Last Crusade</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/raiders-of-the-lost-ark/"
+        target="_blank"
+        >Raiders of the Lost Ark</a
+      >
+      is pretty good. I wish it had ended with them escaping Cairo, but that's
+      my only criticism of the movie.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/falling-down/"
+        target="_blank"
+        >Falling Down</a
+      >
+      is one of the worst movies I've ever seen, and I regret watching it. I'm
+      almost sure it is supposed to be propaganda, but they failed miserably at
+      it, and the film turned into a joke. I felt the same way about
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/hard-hearted/"
+        target="_blank"
+        >Kremen</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-major/"
+        target="_blank"
+        >The Major</a
+      >, and honestly, <em>Kremen</em> is even worse than <em>Falling Down</em>.
+      <em>The Major</em> is slightly better, but still not a very good movie.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Emo Peter.jpg"
+    />
+
+    <p>
+      I rewatched the <strong><em>Sam Raimi Spider-Man trilogy</em></strong
+      >, and it was as good as I remembered it. Both
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/spider-man/"
+        target="_blank"
+        >the first</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/spider-man-2/"
+        target="_blank"
+        >the second</a
+      >
+      movies are top tier, with
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/spider-man-3/"
+        target="_blank"
+        >the third</a
+      >
+      one having a lot of good moments, albeit being a little rushed due to
+      having multiple villains in it. The ending of the first movie was like
+      that scene from <em>Ratatouille</em>, where I was taken back to my
+      childhood with the gosh darn
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=x6nOYUgr4QQ"
+        target="_blank"
+        >Nickelback</a
+      >
+      playing as the credits are flowing. It's nice to go back to some movies to
+      see that time has treated them very well, and I enjoy them as much as I
+      did back in the day.
+    </p>
+    <p>
+      Although I haven't watched it recently, the same thing could be said about
+      the first
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/transformers/"
+        target="_blank"
+        >Transformers</a
+      >
+      movie, just like with <em>Spider-Man</em>, a good song as the cherry on
+      top, this time from
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=8sgycukafqQ"
+        target="_blank"
+        >Linkin Park</a
+      >. The scene that stood out to me the most in the second movie was
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=Cz-17z44F6g"
+        target="_blank"
+        >Dr. Octopus killing the doctors</a
+      >
+      who are trying to operate on him. Essentially, <em>Sam Raimi</em>, to me,
+      is first and foremost a horror movie director, and that scene reminded me
+      of <em>Evil Dead</em> so much. The third movie's standout scene, to
+      nobody's surprise, is the
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=to29LvuColU"
+        target="_blank"
+        >Sandman sequence</a
+      >.
+    </p>
+    <p>
+      I love <em>James Jonah Jameson</em> so much. I had forgotten
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=UjRllqUGcXs"
+        target="_blank"
+        >the one scene</a
+      >
+      in the second movie where he changes his opinion of
+      <em>Spider-Man</em> due to <em>Dr. Octopus'</em> rampage and kidnapping of
+      <em>Mary Jane</em>, and how he does a 180 as soon as
+      <em>Spider-Man</em> steals back his uniform. Some of the shots in the
+      movie will live rent free in my head for a while, like
+      <em>Spider-Man</em> swinging through the city towards
+      <em>Dr. Octopus</em>, only for it to zoom out and then transition into the
+      view from <em>Dr. Octopus'</em> glasses.
+      <a
+        class="link-highlight"
+        href="https://www.reddit.com/r/Spiderman/comments/9je9ou/spiderman_2_dr_octopus_cool_transition/"
+        target="_blank"
+        >Simply brilliant</a
+      >.
+    </p>
+    <p>
+      Just like how I think <strong>Sam Raimi</strong> is
+      <em>one of the best directors still alive</em>, I feel the same about
+      <strong>Willem Dafoe</strong> regarding actors. I cannot imagine the first
+      movie being as good as it is without him in it. You can change the
+      villains or even the main characters' actors and actresses, and it
+      wouldn't be such a downgrade. I didn't mention this in the
+      <em>Streets of Fire</em> section earlier, but he's great in that movie as
+      well.
+    </p>
+    <p>
+      Aside from what I already wrote, the elevator scene in the second movie
+      felt <strong>Evangelionesque</strong> to me. The justice and its purpose,
+      and how it should be enacted, was very sincere, from the reason
+      <em>Peter</em> became <em>Spider-Man</em> to <em>Aunt Mary's</em> speech
+      about how revenge drives men to do unjust things, and how they shouldn't
+      be glad to see her beloved husband's murderer being killed by a hero.
+    </p>
+    <p>
+      And don't even get me started on the character moments. All the things
+      I've talked about are great, but the real meat and potatoes are the
+      character moments. From the first talk between <em>Mary Jane</em> and
+      <em>Peter</em> in the backyard, to the break-up on the bridge, to
+      <em>Gwen Stacy's</em> sadness followed by the apology to
+      <em>Mary Jane</em> based on the fact she was used by emo <em>Peter</em>,
+      all of it is gold. Even the emo <em>Peter</em> stuff is great! I know this
+      part of the blogpost feels more disjointed, but that's because I'm
+      fanboying and can't express what I feel for these movies sufficiently
+      enough.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Darth Vader.jpg"
+    />
+
+    <p>
+      <em>Star Wars</em> was kind of a stinker. I watched both the originals and
+      the prequels, and although I liked some of the human characters and, at
+      times, <em>C-3PO</em>, I just didn't care for the originals that much.
+      <em>Han Solo</em> is my favorite <em>Harrison Ford</em> character.
+    </p>
+    <p>
+      Regarding the original trilogy, the first movie is a bit middle of the
+      road, the second movie is kind of meh, and the third movie is in a weird
+      place where it's simultaneously the best for the themes it has, the
+      funniest of the three, and the worst for all the weird stuff with the
+      excessive use of <em>Ewoks</em> in it. I might have enjoyed
+      <em>A New Hope</em> more if it was a one-and-done experience.
+    </p>
+    <p>
+      When it comes to the prequels… I liked them, sort of. They are dumb and
+      unnecessary in the grand scheme of things, like the two sequels to
+      <em>A New Hope</em>, but I liked parts of them more than the original
+      trilogy. All the action scenes were much better done,
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=RD9P_bLwxcI"
+        target="_blank"
+        >the music</a
+      >
+      was infinitely better, and unlike
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=_D0ZQPqeJkk"
+        target="_blank"
+        >the main theme of the originals</a
+      >, none of the new tracks in the prequels got on my nerves. This might be
+      more of a me issue, but there are a lot of good movie themes that get
+      overused within the movie they are in, and it just starts to become
+      grating to me.
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=J9EZGHcu3E8"
+        target="_blank"
+        >The Good, The Bad and The Ugly theme</a
+      >
+      itself is pretty good, for example, but it gets overused in the movie, and
+      by the final confrontation, I am just done with it. I feel the same about
+      the original trilogy's main theme.
+    </p>
+    <p>
+      Going back to the prequels, all three of them have really good
+      choreography, with <em>Revenge of the Sith's</em> simultaneous duels
+      between
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=Hw7Xxi-TxkQ"
+        target="_blank"
+        >Yoda and Palpatine</a
+      >, and
+      <a
+        class="link-highlight"
+        href="https://www.youtube.com/watch?v=S3OtoO5zjjU"
+        target="_blank"
+        >Obi-Wan and Anakin</a
+      >
+      being my favorites. The biggest problem of the prequels, in my opinion, is
+      that they are prequels and have to make the events happen in a way where
+      it doesn't retcon the originals. <em>Anakin</em>
+      <strong>has to live</strong> even though
+      <em>Obi-Wan</em>
+      <strong>would have mercy-killed him</strong> if the movie didn't demand
+      that he live. Both trilogies are houses of contrivances, but the prequels'
+      house is stacked much higher.
+    </p>
+    <p>
+      If I had to rate the movies in comparison to one another, I’d say
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/star-wars-episode-iii-revenge-of-the-sith/"
+        target="_blank"
+        >Revenge of the Sith</a
+      >
+      is the best, followed by
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/return-of-the-jedi/"
+        target="_blank"
+        >Return of the Jedi</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/star-wars-episode-i-the-phantom-menace/"
+        target="_blank"
+        >The Phantom Menace</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/star-wars/"
+        target="_blank"
+        >A New Hope</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-empire-strikes-back/"
+        target="_blank"
+        >The Empire Strikes Back</a
+      >, and finally
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/star-wars-episode-ii-attack-of-the-clones/"
+        target="_blank"
+        >Attack of the Clones</a
+      >. I was surprised by how many people like
+      <em>The Empire Strikes Back</em>, as even though it is the movie where
+      <em>Darth Vader’s</em> relation to <em>Luke</em> is revealed, most people
+      were probably spoiled on that revelation long before watching the movie.
+    </p>
+    <p>
+      I don't understand the <em>Jar-Jar</em> hate, since the originals have
+      just as annoying characters, like <em>R2-D2</em> and <em>Chewbacca</em>.
+      Overall, <em>Star Wars</em> is not for me, meaning it's just not very
+      good. One last complaint: the movies are too long. No, I shan't elaborate
+      on that.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/spaceballs/"
+        target="_blank"
+        >Spaceballs</a
+      >
+      is probably the least funny <em>Mel Brooks</em> movie I've seen. In his
+      other movies, the humor comes from actual jokes, while
+      <em>Spaceballs</em> is a wink-wink, nudge-nudge type comedy. My lack of
+      enjoyment might have to do with me not liking the thing it parodies as
+      well.
+    </p>
+    <p>
+      I watched the
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ip-man/"
+        target="_blank"
+        >first</a
+      >
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ip-man-2/"
+        target="_blank"
+        >two</a
+      >
+      <em>Ip Man</em> movies and got halfway through
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ip-man-3/"
+        target="_blank"
+        >the third one</a
+      >, but I got bored and didn't finish it. I didn't have high hopes for
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ip-man-4-the-finale/"
+        target="_blank"
+        >the fourth one</a
+      >
+      after that, so I skipped it. The action is alright, but that's about it.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Jumanji.jpg"
+    />
+
+    <p>
+      I went on a bit of a <em>Robin Williams</em> spree here. I rewatched some
+      of his movies I'd already seen, discovered a few I hadn't seen before, and
+      revisited others I had seen a very long time ago and had forgotten. I'll
+      focus on the latter two.
+    </p>
+    <p>
+      I had never seen
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/mrs-doubtfire/"
+        target="_blank"
+        >Mrs. Doubtfire</a
+      >, and it's a pretty funny movie. My only issue with it is
+      <em>Miranda</em> being worse than a combination of <em>Hitler</em>,
+      <em>Lenin</em>, <em>Mao</em>, <em>Stalin</em>, <em>Pol Pot</em>, and
+      <em>Leopold II</em>.
+    </p>
+    <p>
+      I had seen
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/jumanji/"
+        target="_blank"
+        >Jumanji</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/zathura-a-space-adventure/"
+        target="_blank"
+        >Zathura: A Space Adventure</a
+      >
+      as a kid on DVD, but I had long forgotten about both. I rewatched
+      <em>Jumanji</em> but not <em>Zathura</em>, and I liked <em>Jumanji</em>.
+      It has some very well-written parts, like <em>Alan</em> realizing he has
+      become very similar to his father even though he spent the last 26 years
+      in a jungle, and eventually reconciling with him when the game ends. I
+      disliked having the realization scene undercut with a joke, but what can
+      you do.
+    </p>
+    <p>
+      Next, I watched
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/what-dreams-may-come/"
+        target="_blank"
+        >What Dreams May Come</a
+      >, and truthfully, I didn't really like it. I teared up at certain parts,
+      but a lot of ideas were a miss for me. One of the bigger ones being
+      <em>Marie</em> continuing to use the Asian lady's body. The scene works
+      fine, but I believe God made us with a mind and a body. The outer shell
+      may be just appearances, but I wouldn't want to change it to be any
+      better, worse, or different than I am. Just like my mind and soul are
+      essential parts of what make me who I am, my body is the temple in which
+      these spiritual parts of me reside. I understand they use their proper
+      bodies at the end of the movie, but using the same trick three times also
+      kills the emotional impact.
+    </p>
+    <p>
+      Another complaint I have is that the movie is sort of ugly. I understand
+      the oil painting motif, but it looks worse in motion. The aesthetic
+      elements get better as the movie goes on, but not that much better. I
+      picked up on two things. First, the story reminded me of
+      <a
+        class="link-highlight"
+        href="https://en.wikipedia.org/wiki/Orpheus_and_Eurydice"
+        target="_blank"
+        >Orpheus and Eurydice</a
+      >, and I kept comparing the two throughout the movie. You just can't beat
+      a Greek tragedy that has stood the test of time. The other is the
+      <em>three</em>
+      motif that appears a lot in the movie, like the
+      <a
+        class="link-highlight"
+        href="https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights"
+        target="_blank"
+        >Garden of Earthly Delights</a
+      >
+      style painting with three parts to it. Although I think the first one is
+      definitely a thought-out and direct nod, I can't be sure about the second
+      one.
+    </p>
+    <p>
+      The thing connecting these three movies together is kids being a driving
+      force behind a lot of the story, and I have a soft spot for kids, so I
+      liked that. This last one is less of a
+      <em>Robin Williams</em> movie and more of a movie that
+      <em>Robin Williams</em> appears in, but it felt appropriate to mention it
+      in this section. Well, just like what I said about the last three movies,
+      this movie also has a kid as a driving force behind a lot of the story.
+      It's
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/night-at-the-museum/"
+        target="_blank"
+        >Night at the Museum</a
+      >. I had seen it before but had forgotten all about it. It ain't great,
+      but it's not terrible either. I didn't like Ricky Gervais, but the rest of
+      the cast did their jobs properly. The
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/zoolander/"
+        target="_blank"
+        >Zoolander</a
+      >
+      duo is back together and all.
+    </p>
+    <p>
+      This is a nitpick, but after the second night, I presumed the museum
+      director would have more of a problem with one of the cavemen being gone
+      rather than the remaining ones being covered in foam. I am not sure if
+      this is the case, but this movie felt like a direct-to-DVD or TV type of
+      thing.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/The Irishman.jpg"
+    />
+
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-irishman-2019/"
+        target="_blank"
+        >The Irishman</a
+      >
+      sucked, much like other <em>Martin Scorsese</em> movies. I've seen
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/taxi-driver/"
+        target="_blank"
+        >Taxi Driver</a
+      >,
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/goodfellas/"
+        target="_blank"
+        >Goodfellas</a
+      >, and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-wolf-of-wall-street/"
+        target="_blank"
+        >The Wolf of Wall Street</a
+      >, and none of them are good. This is another one to add to the pile. I'll
+      watch
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-last-temptation-of-christ/"
+        target="_blank"
+        >The Last Temptation of Christ</a
+      >
+      followed by
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-passion-of-the-christ/"
+        target="_blank"
+        >The Passion of the Christ</a
+      >
+      (although this one isn't a Scorsese movie) sometime this year, and I hope
+      the former will finally be the one good movie from his filmography. Aside
+      from that, I have
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/the-departed/"
+        target="_blank"
+        >The Departed</a
+      >
+      and
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/shutter-island/"
+        target="_blank"
+        >Shutter Island</a
+      >
+      on my watchlist as well, but I'll be done with Scorsese movies after that.
+      Hopefully, he'll be done with life too.
+    </p>
+    <p>
+      Segueing into talking about <em>The Irishman</em>, I kinda didn't wanna
+      see these geriatrics on my screen, especially de-aged. Many humorous
+      moments stemmed from them being way too old to act like younger men.
+    </p>
+    <p>
+      I think this movie isn't as bad as <em>Goodfellas</em>, but that's more
+      due to how, instead of a live fast, die young type of story, it's a story
+      about worthless men whose power was only good for hurting those who lived
+      more honest and fulfilling lives than them, only for them to end up with
+      broken families, not being visited by anyone except the FBI, and having
+      almost no remorse even at the end of their lives.
+    </p>
+    <p>
+      I can enjoy characters who were written to be bad, but in all the cases
+      where I have, they were either very charismatic or had, albeit not
+      justifiable, an understandable reason for their villainous acts.
+      <strong>Izaya</strong> from
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/anime/6746/Durarara"
+        target="_blank"
+        >Durarara!!</a
+      >
+      and <strong>Fuminori</strong> from
+      <a class="link-highlight" href="https://vndb.org/v97" target="_blank"
+        >Saya no Uta</a
+      >
+      come to mind. I don't remember the name, but there was a Japanese movie
+      with yakuza as one of the subplots, and I didn't really like that portion
+      of the movie either. So, it's not even <em>Thing, Japan</em> being better.
+      It might be
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/kids-return/"
+        target="_blank"
+        >Kids Return</a
+      >
+      but as I said, I don't remember it very well.
+    </p>
+    <p>
+      Speaking of geriatrics playing the Italian mob, I watched
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/ghost-dog-the-way-of-the-samurai/"
+        target="_blank"
+        >Ghost Dog: The Way of the Samurai</a
+      >. They should've called this movie <strong>Ghost Dogshit</strong> because
+      it was not very good. I could go into detail about it, but simply put,
+      samurai, just like many Japanese things, are cringe. A black guy larping
+      as a samurai doesn't make it any better.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/training-day/"
+        target="_blank"
+        >Training Day</a
+      >
+      was kinda meh. I had heard it was an anxiety-inducing movie, but it didn't
+      have that effect on me. I don't have much to say about it aside from that.
+    </p>
+    <p>
+      I felt the same for
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/good-time/"
+        target="_blank"
+        >Good Time</a
+      >: it was alright, but nothing special.
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/uncut-gems/"
+        target="_blank"
+        >Uncut Gems</a
+      >
+      by the same directors was a better movie with more or less the same story
+      structure.
+    </p>
+    <p>
+      I watched some of the classic horror movies. Most of the movies I talked
+      about in the blogpost, I talked about them in the order that I watched
+      them in. However, I watched these horror movies here and there, taking a
+      break from other movies.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/night-of-the-living-dead/"
+        target="_blank"
+        >Night of the Living Dead</a
+      >
+      was shit. Having a semi-competent black guy in it doesn't a good movie
+      make. I don't know whether it was revolutionary when it came out, nor do I
+      care, as it was a bore for me.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/childs-play/"
+        target="_blank"
+        >Child's Play</a
+      >
+      was alright, but nothing special. A friend told me it was actually scary,
+      but I guess he must have seen it as a young teenager or a kid.
+    </p>
+    <p>
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/a-nightmare-on-elm-street/"
+        target="_blank"
+        >A Nightmare on Elm Street</a
+      >
+      was amazing. It could've been one of my top 3 horror movies of all time if
+      not for that awful ending. I had to watch this one while hearing my dad
+      complain about the type of movies I watch, and due to having to explain
+      what I liked so much about it, I really put effort into thinking about
+      what makes it special. Aside from all the obvious stuff, I guess I have a
+      soft spot for teenagers not getting taken seriously when they are right.
+    </p>
+    <p>
+      I started watching
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/scream/"
+        target="_blank"
+        >Scream</a
+      >, but 15 minutes into the movie the subtitle sync got messed up, so I
+      switched to
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/film/friday-the-13th/"
+        target="_blank"
+        >Friday the 13th</a
+      >. Funnily enough, during the first 15 minutes of <em>Scream</em>,
+      <em>Friday the 13th's</em> ending was spoiled for me. I didn't really like
+      <em>Friday the 13th</em>. I don't care for slasher movies that much in
+      general, but this one was especially boring.
+    </p>
+    <p>
+      I then went back to watch <em>Scream</em> with a different subtitle track,
+      which ended up still being broken, but I did finish the movie. I can't say
+      I enjoyed it, however. Too predictable for my tastes, along with being too
+      referential. I'm not a horror movie guy, so I'm not intimately familiar
+      with the rules, cliches, and the tropes of the genre, but I figured out
+      quite a bit of the ending early on. I think it was around
+      <em>Tatum's</em> death I guessed the existence of multiple killers, and
+      guessed that <em>Billy</em> was one of the killers when it became evident
+      he had watched many horror movies and could have been at the scene of
+      every crime.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Mr. Frog.jpg"
+    />
+
+    <p>
+      Last but not least, although this isn't a movie, it felt appropriate to
+      talk about it here. A couple of months back, I watched the first two
+      seasons of
+      <a
+        class="link-highlight"
+        href="https://www.serializd.com/show/Smiling-Friends-126506"
+        target="_blank"
+        >Smiling Friends</a
+      >
+      in one sitting and enjoyed them quite a bit. Then season 3 started to come
+      out and I started watching new episodes of the show as they were coming
+      out, and I also enjoyed them quite a bit. I felt as if this season had
+      episodes that were funnier than those of previous seasons, while also
+      having a couple of stinkers. High highs, low lows type of thing. I have
+      seen all eight episodes, but <em>Sonarr</em> shows two more episodes
+      having been produced. I don't know much about that, but yeah,
+      <em>Smiling Friends</em> was decently funny.
+    </p>
+    <p>
+      There are many other movies I watched but omitted from the blogpost, since
+      most of them either didn't leave much of an impression on me or weren't my
+      cup of tea to begin with. There are also a couple of movies that I
+      omitted, even though I liked them a lot, because if I were to talk about
+      them, I would need a whole new blogpost.
+    </p>
+
+    <h3>Manga</h3>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Real mo Tama ni wa Uso wo Tsuku.png"
+    />
+
+    <p>
+      <strong>Real mo Tama ni wa Uso o Tsuku</strong> is a very short manga.
+      Each chapter is 2 to 6 pages long. You can read it in its entirety in a
+      couple of hours. I had been reading it for a couple of years and had
+      gotten quite bored of it. Although the chapters themselves are very short,
+      the wait between them and their scanlation is not. I had actually stopped
+      keeping up with it for a couple of months and only learned of its ending
+      from an acquaintance's post on a media thread. Needless to say, I read the
+      rest of the chapters in about 15 minutes and felt the ending was rushed,
+      especially compared to the arc that preceded it, which felt dragged out to
+      me.
+    </p>
+    <p>
+      <strong>2.5 Jigen no Yuuwaku</strong> is a manga I started because it had
+      cute girls in cosplay. It was an ecchi manga where softcore nudity was
+      present. I didn't take it seriously for a long time because it wasn't very
+      serious. I didn't really care for the character of <em>Lilysa</em> because
+      she didn't have many problems. The majority of the story went ahead with
+      her having no arc of her own until the last quarter of the story, where
+      her arc ended up being a misunderstanding of sorts. I disliked that a lot.
+      She was also a big Mary Sue. Everyone quickly became friends with her,
+      even supposed rivals came to like her a lot, to the point of fighting for
+      her attention.
+    </p>
+    <p>
+      I thought the male main character, <em>Okumura</em>, wasn't much better.
+      He was like a worse version of <em>Keima</em> from
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/7519/Kami_nomi_zo_Shiru_Sekai"
+        target="_blank"
+        >TWGOK</a
+      >. In a way, everything in this manga could be summarized as an inferior
+      version of <em>TWGOK</em>. However, it has its saving graces. In regards
+      to <em>TWGOK</em>, it had been pretty obvious for a long time that he
+      would end up with a girl because he had moved past his baggage. The same
+      wasn't true for <em>Okumura</em>. There had been bits and pieces of him
+      finally loving 3D, but loving 3D and loving a person are worlds apart.
+      There were definitely hints as to who he liked too, but I would still
+      argue it wasn't very concrete. Although I have spoken rather negatively
+      about this manga, I did like it, and at the end, the first thought that
+      came to my mind was that this was <em>Evangelion 4.0</em>, done much
+      better.
+    </p>
+    <p>
+      Speaking of <em>Evangelion 4.0</em>,
+      <a
+        class="link-highlight"
+        href="https://pomf.lain.la/f/q0i1wob2.png"
+        target="_blank"
+        >Fate/Grand Order</a
+      >
+      ended. lol. lmao, even. Get fucked gachafags.
+    </p>
+    <p>
+      <strong>Kagurabachi</strong> is not very good. I read the first three or
+      so chapters when that was all that existed and thought maybe I would go
+      back to it later. Eventually, when it reached 100 chapters, I caught up.
+      It has some dumb story moments, but my main problem is how the story
+      arbitrarily puts characters out of commission for very long stretches.
+      This happens to everyone, including the main character. Some characters
+      who I thought would be very important to the story have not been seen in
+      more than 70 chapters.
+    </p>
+    <p>
+      The art has also regressed a lot compared to the early chapters. Some
+      background characters are basically sketches at this point. That said, I
+      do not understand why people treat this as a black sheep. It is not as if
+      other manga currently published in <em>Shonen Jump</em> are any better or
+      worse than this. In fact, most manga published in the same magazine in the
+      past had similar quality, except for the art, and the decline in art
+      quality in <em>Kagurabachi</em> is fairly recent and hopefully only a
+      temporary issue.
+    </p>
+    <p>
+      I think a lot of people fell for the meme that it was good when it first
+      started and then became jilted when it became clear that it was the same
+      as many others that came before it.
+    </p>
+    <p>
+      <strong>Maria no Danzai</strong> is in the same vein as
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/126699/Shounen_no_Abyss"
+        target="_blank"
+        >Shounen no Abyss</a
+      >, but at least that manga had some entertaining moments, while this one
+      is just boring. It also flip flops about being a revenge story. The mom is
+      kind of hot, and I think I even got into it because of a mom thread on
+      /a/.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Ookami Shounen wa Kyou mo Uso wo Kasaneru.png"
+    />
+
+    <p>
+      It must have been four or five years ago. I was going through a period
+      where I didn’t know what I wanted to do with my life. Every day felt the
+      same. Now, I take that as a blessing, but back then it felt as if my life
+      had ended. I can’t even pin down why I felt that way at the time. Maybe I
+      could see on the horizon an end to my peaceful days with friends from
+      university. Maybe it was the anxiety of entering the real world and having
+      to look for a job. Maybe it was something very inconsequential.
+      Regardless, I was at a turbulent point in my life.
+    </p>
+    <p>
+      One of these days, someone asked me for a favor. They had a personal
+      matter to attend to but couldn’t close their shop for a whole day. I
+      didn’t really want to do it, but I didn’t have it in me to say no. So, I
+      opened up early in the morning and started reading
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/manga/85802/Ookami_Shounen_wa_Kyou_mo_Uso_wo_Kasaneru"
+        target="_blank"
+        >Ookami Shounen wa Kyou mo Uso wo Kasaneru</a
+      >. I still had to attend to customers, so it took me the whole day to
+      finish it. I remember feeling a strange mix of giddiness and sadness as I
+      neared the end. I didn’t want it to conclude in a way I didn’t like.
+      Thankfully, it didn’t. It ended perfectly and became my favorite romance
+      manga.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Cuprum no Hanayome.jpg"
+    />
+
+    <p>
+      Not much has changed since then, apparently, because I had a pretty
+      similar experience reading the first six volumes (that’s all the
+      translated English volumes at the moment) of
+      <strong>Cuprum no Hanayome</strong>. I can’t even tell how much of this is
+      me genuinely loving the manga and how much of it is me just being happy to
+      read another
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/people/18025/namo"
+        target="_blank"
+        >namo</a
+      >
+      work. Regardless of how much that influences my opinion,
+      <em>Cuprum no Hanayome</em> is a pretty good manga. It’s lighthearted,
+      cute, funny, and even bittersweet at times. The idea of your beloved
+      person influencing your creative work isn’t new, but I had never seen it
+      applied to this type of craft before. This one, along with
+      <em>Ookami Shounen wa Kyou mo Uso wo Kasaneru</em>, comes highly
+      recommended from me.
+    </p>
+
+    <h3>Closing notes</h3>
+    <p>
+      This is certainly the longest blogpost I’ve ever written, and I don’t
+      think I’ll ever top it in terms of length. I had a lot to say about
+      movies, and I wanted to get it all out of my system. I made a
+      <a
+        class="link-highlight"
+        href="https://letterboxd.com/NecRaul/"
+        target="_blank"
+        >Letterboxd account</a
+      >
+      and a
+      <a
+        class="link-highlight"
+        href="https://www.serializd.com/user/NecRaul/profile"
+        target="_blank"
+        >Serializd account</a
+      >
+      to go along with my
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/profile/NecRaul"
+        target="_blank"
+        >MyAnimeList account</a
+      >
+      and spreadsheets. I have also edited
+      <a class="link-highlight" href="/about/" target="_blank">my about page</a>
+      to reflect these new additions to my media consumption habits.
+    </p>
+    <p>
+      At the end of it all, I guess I have a few things to say about movies and
+      TV shows. I don’t think I’ll ever watch a TV show with 40 to 45 minute
+      episodes again. When I look back at the ones I finished, it feels
+      exhausting. They aren’t as good as movies tend to be, but they take an
+      extreme amount of time compared to almost anything else.
+    </p>
+    <p>
+      Even the longest visual novels usually top out around 120 to 140 hours,
+      but some of these TV shows go on forever. Not only do I get disinterested,
+      they never manage to keep the same level of quality, and I’m talking about
+      the good ones here.
+    </p>
+    <p>
+      If I'm being honest, most of TV shows I watched were something I got
+      pulled into by a former girlfriend or a girl I wanted to be my girlfriend.
+      So what I'm trying to say is that TV shows feel like worse versions of
+      movies made by people who aren't trusted with making actual movies. And I
+      already prefer other mediums over movies to begin with.
+    </p>
+
+    <img
+      class="postimage zoomimage"
+      src="/images/post/Intermission_movies_manga_and_me/Sora no Woto stream.png"
+    />
+
+    <p>
+      Aside from all that, I attended the yearly
+      <a
+        class="link-highlight"
+        href="https://myanimelist.net/anime/6802/So_Ra_No_Wo_To"
+        target="_blank"
+        >Sora no Woto</a
+      >
+      rewatch stream with /a/. It had been a couple of years since I had the
+      time to watch it, join any watch-alongs with /a/, hang out for post-stream
+      r/a/dio, or chat with people in the r/a/dio IRC. Suffice it to say, it was
+      as good as I remembered it, nay, even better, and maybe I only enjoyed it
+      that much because of the whole experience, but what the hell. Due to how
+      much I enjoyed it, I also updated my Anime 3x3, replacing
+      <em>Denpa Onna to Seishun Otoko</em> with <em>Sora no Woto</em>. The
+      former is great in its own right, but there is something about
+      <em>Sora no Woto</em> that I cannot quite put into words. I guess this
+      will be my other recommendation: it is great, and you should give it a
+      watch.
+    </p>
+
+    <p>
+      The next post, which will be about <em>Mushoku Tensei</em>, is long
+      overdue. I was planning to finish <em>Nukitashi 2</em> by the end of
+      November at the latest and write the blogpost a couple of days after that,
+      but things outside of my control kept happening, so I ended up working on
+      this one alongside it.
+    </p>
+    <p>
+      The <em>Mushoku Tensei</em> blogpost should be shorter than this one or
+      the
+      <a
+        class="link-highlight"
+        href="/post/Nukitashi_1+2_review/"
+        target="_blank"
+        >Nukitashi blogpost</a
+      >. I already have most of my thoughts in order, but I might wait until
+      <a
+        class="link-highlight"
+        href="https://x.com/TheLuciusSeneca"
+        target="_blank"
+        >Lucius Seneca</a
+      >
+      finishes his translation of <em>Paul Gaiden</em> and I re-read it before I
+      start writing that blogpost.
+    </p>
+
+    <br />
+
+    <hr />
+
+    <div class="footer">
+      <a class="navitem" href="mailto:necraul@kuroneko.dev" target="_blank"
+        >Contact</a
+      >
+      <a class="navitem" href="https://github.com/NecRaul" target="_blank"
+        >Github</a
+      >
+      <a class="navitem" href="/feed.xml" target="_blank">RSS</a>
+      <a
+        class="navitem"
+        href="https://github.com/NecRaul/kuroneko-dev"
+        target="_blank"
+        >Source</a
+      >
+    </div>
+    <div id="image-modal" class="modal">
+      <img class="modal-content" id="enlarged-image" />
+    </div>
+    <script type="text/javascript" src="/javascript/title.js"></script>
+    <script type="text/javascript" src="/javascript/modal.js"></script>
+
+    <br />
+  </body>
+</html>

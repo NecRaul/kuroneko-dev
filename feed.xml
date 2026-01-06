@@ -8,6 +8,14 @@
     <atom:link href="https://www.kuroneko.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
+      <title>Intermission: movies, manga, and me</title>
+      <link>https://www.kuroneko.dev/post/Intermission_movies_manga_and_me</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 GMT</pubDate>
+      <description>I have to get back to watching anime and playing vidya...</description>
+      <enclosure url="https://www.kuroneko.dev/images/post/Intermission_movies_manga_and_me/Intermission.jpg" type="image/jpeg"/>
+    </item>
+
+    <item>
       <title>Nukitashi 1+2 review</title>
       <link>https://www.kuroneko.dev/post/Nukitashi_1+2_review</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
