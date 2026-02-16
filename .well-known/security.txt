@@ -1,0 +1,16 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Canonical: https://kuroneko.dev/.well-known/security.txt
+Expires: 2027-02-14T00:00:00Z
+Contact: mailto:necraul@kuroneko.dev
+Encryption: https://kuroneko.dev/gpg.txt
+Preferred-Languages: en
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQT8pv7hF7X05lOyGrSfzigdVzN5+gUCaZNUvgAKCRCfzigdVzN5
++g/hAQDhnwNjQt3Z5RHvKQ4OElPgrhwJZruv+QNF0/TLRSgBPwD/YwMzSwljQkP+
+im8F+VWAiVg+e/xwzXXGOSirW9W9aAY=
+=jkGL
+-----END PGP SIGNATURE-----
